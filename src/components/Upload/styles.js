@@ -26,4 +26,10 @@ const messageColors = {
   error: '#e57878',
   success: 'green',
 };
-export const UploadMessage = styled.p``;
+export const UploadMessage = styled.p`
+  display: flex;
+  color: ${props => messageColors[props.type || 'default']};
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+`;
