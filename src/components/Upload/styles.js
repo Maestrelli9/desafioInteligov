@@ -33,3 +33,7 @@ export const UploadMessage = styled.p`
   align-items: center;
   padding: 15px 0;
 `;
+export const TableContent = styled.table`
+width: 100%;
+max-width: 300px;
+`;

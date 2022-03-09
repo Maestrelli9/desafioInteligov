@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-
 import Dropzone from 'react-dropzone';
- import { DropContainer, UploadMessage } from './styles';
+import { DropContainer, UploadMessage } from './styles';
 
 export default class Upload extends Component {
   renderDragMessage = (isDragActive, isDragReject) => {
@@ -17,8 +16,10 @@ export default class Upload extends Component {
   };
 
   render(){
+    const { onUpload } = this.props
        return (
-           <Dropzone accept="text/*" onDropAccepted={() => {}}>
+       <div>
+           <Dropzone type="files" accept="text/*" onDropAccepted={onUpload}>
                { ({ getRootProps,getInputProps,isDragActive,isDragReject }) =>(
                   <DropContainer
                     {...getRootProps()}
@@ -30,6 +31,7 @@ export default class Upload extends Component {
                     </DropContainer>
                )}
            </Dropzone>
+           </div>
        );
   }
 
